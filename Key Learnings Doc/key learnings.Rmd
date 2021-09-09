@@ -1,0 +1,61 @@
+---
+title: "Key Learnings"
+output: html_document
+---
+
+## 1. Vectors
+
+- Vectors are the fundamental data object in R
+- There are no scalars in R, only length-1 vectors
+- Vector recycling is an important feature
+- You will subset vectors with square brackets `vec[]` a lot
+
+
+## 2. Matrices
+
+- Matrices are vectors with a `dim` attribute
+- By default, matrices fill column by column unless `byrow=TRUE`
+- `*` does element-wise multiplication
+- `%*%` does matrix multiplication
+- `apply()` is a great way to apply a calculation to each row or column
+
+
+## 3. Lists
+
+- Lists are "generalized" vectors
+- Three ways to subset: single brackets `[]`, double brackets `[[]]`, and dollar signs `list$element`
+- Single-bracket `[]` subsetting always returns a list
+- `lapply()` is a great way to apply a calculation to each element of the list
+
+
+## 4. Dataframes
+
+- Under the hood, a dataframe is just a list where all list-elements (columns of the df) have the same length
+
+
+## 5. Functions
+
+
+
+## 6. Base Plots
+
+
+
+## 7. ggplot
+
+
+
+## 8. Tidyverse
+
+
+
+## 9. Data.Table
+
+
+
+## 10. RMarkdown
+
+
+
+
+
