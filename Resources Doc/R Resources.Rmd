@@ -1,0 +1,89 @@
+---
+title: "Select Books and Online Resources for R"
+output: pdf_document
+urlcolor: magenta
+---
+
+# Books
+
+
+## Introductory
+
+*S Programming* by Venables and Ripley
+
+\vspace{-0.4cm}
+ - The original book to learn about R.  Provides excellent historical context on R's development.
+ - Purchase online at, e.g., [Amazon](https://www.amazon.com/Programming-Statistics-Computing-William-Venables/dp/0387989668).
+
+*R for Everyone* by Lander
+
+\vspace{-0.4cm}
+ - A more-modern intro to R.  Touches on both R and statistics generally.
+ - Although modern, virtually no discussion of `data.table` or `tidyverse`.
+
+*R for Data Science* by Wickham and Grolemund
+
+\vspace{-0.4cm}
+ - Good intro book.  Emphasizes Tidyverse.
+ - Contains a lot of the things you would see by watching R talks by Hadley Wickham over the years.
+ - Available for free online [here](https://r4ds.had.co.nz/)
+
+
+## Advanced
+
+*Advanced R* by Wickham
+
+\vspace{-0.4cm}
+- An excellent book.  The first half isn't that "advanced" and I would recommend it to newer R users.
+- Chapter 2 on names and values is a creative way to think about what it means to name objects, and this isn't covered in any other book I've read.
+- Available for free online [here](https://adv-r.hadley.nz/)
+
+*Software for Data Analysis* by Chambers
+
+\vspace{-0.4cm}
+- This book is advanced.  Chambers created S (which sort of became R, loosely speaking).  So he knows *everything* about its inner workings.
+- Buy online at, e.g., [Amazon](https://www.amazon.com/Software-Data-Analysis-Programming-Statistics/dp/0387759352/)
+
+
+## Special Topics
+
+*ggplot2* by Wickham
+
+\vspace{-0.4cm}
+- A whole book about Hadley's plotting package.
+- PDF available for free through the UCLA library [here](https://link.springer.com/book/10.1007/978-3-319-24277-4)
+- Be sure to check out the rest of the [*UseR*](https://link.springer.com/search?facet-series=%226991%22&facet-content-type=%22Book%22) books from Springer, most available for free via UCLA library
+
+*R for Marketing Research and Analytics* by Chapman and Feit 
+
+\vspace{-0.4cm}
+- Provides a wide variety of analytical methods for marketing analytics.
+- Unlike most other stats books, this one shows you how to *simulate* data and then fit models on that simulated data -- a great skill for testing whether your parameter estimates recover the true values!
+- Available for free as part of the UseR Springer books, online [here](https://link.springer.com/book/10.1007/978-3-030-14316-9)
+
+
+
+
+# Links by topic
+
+
+## Rmarkdown
+
+- Rstudio's online guide to RMarkdown is [here](https://rmarkdown.rstudio.com/lesson-1.html)
+- A fun and interactive tutorial for learning markdown syntax is [here](https://commonmark.org/help/tutorial/)
+- Rmarkdown can be used to create a website ([link](https://bookdown.org/yihui/blogdown/)), write a book ([link](https://bookdown.org/yihui/bookdown/)), prepare a presentation ([link](https://slides.yihui.org/xaringan#1)), or other fun things ([link](https://bookdown.org/))!
+
+
+## Tidyverse
+
+- The best place to start learning about the Tidyverse is the *R for Data Science* book listed above
+- Tidyverse maintainers also publish a blog [here](https://www.tidyverse.org/blog/2021/08/teach-tidyverse-2021/) that will keep you up to date on new developments
+
+
+## Data.Table
+
+- The best place to start learning about `data.table` is with the vignettes that are bundled with the `data.table` package, available online [here](https://cran.r-project.org/web/packages/data.table/vignettes/)
+- In particular, read the Intro Vignette [here](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)
+
+
+
