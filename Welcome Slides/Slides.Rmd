@@ -1,0 +1,86 @@
+---
+title: "R Programming Workshop"
+subtitle: "MFE Incoming Class of 2021"
+institute: "UCLA Anderson"
+date: "Sept 20, 2021"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+About me
+
+.pull-left[
+- **name:**  
+Dan Yavorsky
+
+- **credentials:**  
+they hired me
+
+- **relevant prior work experience:**  
+MFE 402 TA
+
+- **where do I work:**  
+Bain and UCSD
+
+- **things keeping me busy:**  
+two kids under 2!
+
+- **fun fact:**  
+my dog Chuck has the full name Charles Barkely
+
+- **recent win:**  
+published main chapter of my disseration in a top journal
+]
+
+.pull-right[
+- **favorite stats books:**  
+    - *Computer Age Statistical Inference* by Effron & Hastie  
+    - *A Course in Econometrics* by Goldberger  
+    - *Business Data Science* by Taddy
+
+- **outspoken marketing/strategy professor that's fun to follow on twitter:**  
+Scott Galloway (@profgalloway)
+
+- **things I collect:**  
+watches, pocket knives, textbooks, whiskey
+
+- **best children's books:**  
+Pout Pout Fish  
+Fox in Socks  
+Llama llama red pajama
+]
+
+---
+
+.center[If you are brand new to R]
+
+--
+
+.center[That's OK!]
+
+--
+
+.center[I'm here to help]
+
+--
+
+.pull-left[
+But also read one of these
+
+- https://r4ds.had.co.nz/
+- https://adv-r.hadley.nz/
+- http://www.modernstatisticswithr.com/
+]
+
+---
+
+class: center, middle
+
+# Let's get coding!
+
+
+
