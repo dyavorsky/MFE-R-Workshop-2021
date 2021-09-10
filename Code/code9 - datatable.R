@@ -100,7 +100,7 @@ library(data.table)
     
     two_other_cols <- grep("Sepal.", names(iris), value=T)
     iris[ , lapply(.SD, mean), by=species, .SDcols = two_other_cols]
-
+    
     
     
 ## PRACTICE QUESTIONS
@@ -122,19 +122,6 @@ library(data.table)
     #   As a check, Jan 1, 2013 had 842 flights that day (you should get the same number for Jan 1)
     
     #5. Delete the variable time_hour from the data.table
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
