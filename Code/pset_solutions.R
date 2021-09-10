@@ -29,11 +29,11 @@
         
         length(bdays)
         twofives[bdays]
-    
-    
-    
-    
-    
+
+
+
+
+
 # PROBLEM SET 2 -----
 
     # Write your own code to extract the diagonal of an nxn matrix
@@ -77,8 +77,8 @@
 
 
 
-        
-        
+
+
 ## PROBLEM SET 3
 
     # Consider two families: the SSS family and the YYY family. Here's a list that has two
@@ -102,9 +102,9 @@
         sapply(xx, mean)
 
 
-    
-    
-    
+
+
+
 # PROBLEM SET 4
 
     # 1. load the "mtcars" dataset like this:
@@ -176,11 +176,11 @@
         #     should have 3 columns: species, measurement_name, and measurement_value
             
             tidyr::pivot_longer(data=iris, !Species, names_to="m_name", values_to="m_value")
-    
-    
-    
-    
-    
+
+
+
+
+
 ## PROBLEM SET 5
 
     # This function should replace NAs with zeros. Finish it by replacing the ...'s
@@ -229,17 +229,17 @@
 
 
 
-        
+
 ## PROBLEM SET 6
 
     # Use the 'diamonds' dataset in the 'ggplot2' package to make the following plot:
-    # x is 'log(carat)'
-    # y is 'log(price)'
-    # color the points with a different color for each level of 'clarity'
-    # (you may find that transparency is nice addition here)
-    # use pch to change the point character to a filled-in circle
-    # use cex to make the points small
-    # be sure to label the x-axis and y-axis, and add a title
+        # x is 'log(carat)'
+        # y is 'log(price)'
+        # color the points with a different color for each level of 'clarity'
+        # (you may find that transparency is nice addition here)
+        # use pch to change the point character to a filled-in circle
+        # use cex to make the points small
+        # be sure to label the x-axis and y-axis, and add a title
         
         data(diamonds, package="ggplot2")
         
@@ -256,15 +256,70 @@
         
     # Run a regression of log(price) on log(carat) using the diamonds dataset and plot
     # the fitted regression line on the plot. Use lwd to make the line thicker and more noticeable.
-
+        
         reg <- lm(log(price) ~ log(carat), data=diamonds)
         abline(reg, col="black", lwd=3)
 
 
-        
-        
-        
+
+
+
 ## PROBLEM SET 7
+
+    # Use the 'diamonds' dataset in the 'ggplot2' to make the following plot:
+        # x is 'log(carat)'
+        # y is 'log(price)'
+        # color the points with a different color for each level of 'clarity'
+        # add a title
+        
+        ggplot(diamonds) + 
+            geom_point(aes(x=log(carat), y=log(price), color=clarity)) +
+            ggtitle("Look at my fancy plot!")
+
+
+
+
+
+## PROBLEM SET 8
+        
+    # use the flights data to answer these questions
+    install.packages("nycflights13")
+    data(flights, package="nycflights13")
+    
+    # Convert the flights data.frame to a tibble.
+    
+        library(tidyverse)
+        flights <- as_tibble(flights)
+    
+    # What is the average airtime per destination?
+    
+        flights %>% group_by(dest) %>% summarize(mean(air_time, na.rm=T))
+        
+    # Calculate the monthly average departure delay and arrival delay by NY airport ("origin")
+        
+        flights %>% 
+            group_by(year, month, origin) %>% 
+            summarize(avg_dd = mean(dep_delay, na.rm=T),
+                      avg_ar = mean(arr_delay, na.rm=T))
+    
+    # Add the variable "tdf" to the data.frame, where "tdf" is the total number of daily flights.
+    # That is, "tdf" is a count of the number of flights that departed each day
+    # As a check, Jan 1, 2013 had 842 flights that day (you should get the same number for Jan 1)
+    
+        flights <- flights %>% 
+                        group_by(year, month, day) %>% 
+                        mutate(tdf = n())
+        
+    # Delete the variable time_hour from the data.table        
+    
+        flights <- flights %>% select(-time_hour)
+
+
+
+
+
+
+## PROBLEM SET 9
 
     # use the flights data to answer these questions with data.table syntax
     install.packages("nycflights13")
@@ -297,59 +352,10 @@
         flights[ , tdf := .N, by=.(year, month, day)]
         
     # Delete the variable time_hour from the data.table
-
+        
         flights[ , time_hour := NULL]
 
-        
-        
 
 
-## PROBLEM SET 8
 
-    # use the flights data to answer these questions
-    install.packages("nycflights13")
-    data(flights, package="nycflights13")
-    
-    # Convert the flights data.frame to a tibble.
-    
-        library(tidyverse)
-        flights <- as_tibble(flights)
-    
-    # What is the average airtime per destination?
-    
-        flights %>% group_by(dest) %>% summarize(mean(air_time, na.rm=T))
-        
-    # Calculate the monthly average departure delay and arrival delay by NY airport ("origin")
-        
-        flights %>% 
-            group_by(year, month, origin) %>% 
-            summarize(avg_dd = mean(dep_delay, na.rm=T),
-                      avg_ar = mean(arr_delay, na.rm=T))
-    
-    # Add the variable "tdf" to the data.frame, where "tdf" is the total number of daily flights.
-    # That is, "tdf" is a count of the number of flights that departed each day
-    # As a check, Jan 1, 2013 had 842 flights that day (you should get the same number for Jan 1)
-    
-        flights <- flights %>% 
-                        group_by(year, month, day) %>% 
-                        mutate(tdf = n())
-        
-    # Delete the variable time_hour from the data.table        
-    
-        flights <- flights %>% select(-time_hour)
-        
-    # Use the 'diamonds' dataset in the 'ggplot2' to make the following plot:
-    # x is 'log(carat)'
-    # y is 'log(price)'
-    # color the points with a different color for each level of 'clarity'
-    # add a title
-        
-        ggplot(diamonds) + 
-            geom_point(aes(x=log(carat), y=log(price), color=clarity)) +
-            ggtitle("My Title")
-        
-        
-        
-        
-        
 
