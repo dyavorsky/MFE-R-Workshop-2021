@@ -15,8 +15,7 @@ output: html_document
 
 - Matrices are vectors with a `dim` attribute
 - By default, matrices fill column by column unless `byrow=TRUE`
-- `*` does element-wise multiplication
-- `%*%` does matrix multiplication
+- `*` does element-wise multiplication, whereas `%*%` does matrix multiplication
 - `apply()` is a great way to apply a calculation to each row or column
 
 
@@ -31,31 +30,67 @@ output: html_document
 ## 4. Dataframes
 
 - Under the hood, a dataframe is just a list where all list-elements (columns of the df) have the same length
+- `str()` is your friend; use it liberally
+- Watch out for factor variables! Use functions from the package `forcats` for working with factors
+- You will often use a boolean vector of length-$N$ to subset an $N \times K$ dataframe: `df[boolvec, ]`
+- When using Base R (not data.table and not tidyverse), you need to use `df$` a lot, as in `df$newcol <- df$var1 + df$var2`
+- The "advanced" data wranging topics are (in increasing order of code complexity): merge, aggregate, reshape
 
 
 ## 5. Functions
 
+- Create a new function `myfun` like this: `myfun <- function(arg1, arg2) {...}` and then call it `myfun(3,4)`
+- The function returns either the last thing calculated or whatever you put in `return()`
+- The `if()` function expects a *single* true/false result; used like so: `if() {...} else {...}`
+- The `ifelse()` function is vectorized; used like so: `ifelse(test, vals_for_true, vals_for_false)`
+- When looping, don't "grow" vectors; instead start with a big empty vector and then fill it in
+- Anonymous functions can be handy! e.g., sum of squares of elements in each row of a matrix with
+    `apply(mat, 1, function(x) sum(x^2))`
 
 
 ## 6. Base Plots
 
+- `hist()` makes histograms
+- `plot()` makes scatterplots
+- `boxplot()` makes barplots
+- You can make customized and elegant graphics with R, but it may take quite a few lines of code
 
 
 ## 7. ggplot
 
+- Start with `ggplot(df)`
+- Then add your "geoms" with plus signs, such as `ggplot(df) + geom_point()`
+- You can put the values ("aesthetics") in the global spot `ggplot(aes=...)` or the local spot `geom_point(aes=...)`
 
 
 ## 8. Tidyverse
 
+- The package `dplyr` introduced the pipe operator (`%>%`), now R has a native pipe (`|>`)
+- Tidyvser works with "tibbles" that are just dataframe with special properties
+- 5 key verbs:
+    - `filter()` selects rows
+    - `arrange()` orders by row
+    - `select()` chooses columns
+    - `mutate()` creates new columns
+    - `summarize()` with group_by() does aggregations
+- Tidyverse code reads like a sentence rather than a set of nested functions
+- Some nice-to-haves like `n()` that give the number of rows
 
 
 ## 9. Data.Table
 
-
+- Turn a dataframe into a data.table with `setDT(df)`
+- There is a nice parallel with SQL code:
+    - R:   `dt[i, j := ..., by = ...]`
+    - SQL: `dt[where / order by, select / update, group by]`
+- `.N` gives the row count
+- `.SD` lets you work with a "**s**ubset of the **d**ata"
 
 ## 10. RMarkdown
 
-
-
+- You create an RMarkdown document using the simple markdown syntax and R code chunks
+- The package `knitr` "knits" your document, which means it runs the R code, collects the code's results, and create a "base" markdown document with all 3 things (your markdown syntax, your code, and your code's results).
+- `pandoc` (a Haskell library, not an R package) then converts `knitr`'s output (the base markdown document) to a file format of your choosing --  usually html or pdf
+- This is a fantastic way to do your assigments!
 
 
