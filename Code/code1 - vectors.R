@@ -109,8 +109,11 @@
     seq_along(x)
     which(x %in% c("d", "a", "n"))
     
+    paste(c("a", "b", "c"), c("x", "y", "z"))
+    paste0(c("a", "b", "c"), c("x", "y", "z"))
+    
     sentence <- c("I'm", "learning", "R")
-    paste(sentence)
+    paste(sentence, collapse = " ")
     paste("hi", "there", sep=" | ")
     paste0("path/to/folder/", "myfile.csv")
     
