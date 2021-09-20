@@ -54,7 +54,7 @@
     y <- 4:10
     c(x, y)
     
-    # MANY funcitons are "vectorized"
+    # MANY functions are "vectorized"
     x <- 1:3
     y <- 7:9
     x + y
