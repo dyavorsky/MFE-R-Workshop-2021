@@ -50,7 +50,7 @@
         mat[cbind(2:n, 1:(n-1))]
     
     # Write code to generate a general matrix (i.e., of any dimension n × n) that follows this pattern
-    [,1] [,2] [,3] [,4] [,5] [,6]
+          [,1] [,2] [,3] [,4] [,5] [,6]
     [1,]    2    3    4    5    6    7
     [2,]    3    4    5    6    7    8
     [3,]    4    5    6    7    8    9

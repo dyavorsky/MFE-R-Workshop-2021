@@ -12,9 +12,12 @@
     class(mat)
     str(mat)
     
-    attributes(mat)
+    attributes(1:5) # << no atts for a vector
+    attributes(mat) # << dim att for a matrix
+    
     attributes(mat)$dim <- NULL
     mat
+    class(mat)
 
     vec <- 1:50
     attributes(vec)
@@ -23,9 +26,12 @@
     vec    
     
 # matrix math
+    rm(list=ls())
     x <- matrix(1:10, 5, 2)
+    x
+    
     y <- x
-    x + y    
+    x + y
     
     # vector recycling is still a thing
     x + 3    
@@ -34,6 +40,7 @@
     # element-wise versus matrix multiplication
     x*y
     t(x) %*% y
+    x %*% t(y)
     
     # matrix operations you would expect
     t(x)
@@ -64,7 +71,7 @@
     mat[1:3, 1:2]
     mat[4:5,4] <- 1000; mat
     
-    sub <- matrix(c(1,1,4,6, 4, 7), 3, 2, T)
+    sub <- matrix(c(1,1,4,6, 4, 7), 3, 2, T); sub
     mat[sub]
     
     mat[mat%%2==0]
