@@ -95,11 +95,13 @@
     all(x<2)
     
     # logical vectors and subsetting
+    x <- 10:20
     y <- x %in% c(10,13)
     x[y]
     x[c(TRUE, FALSE)] #watch out for recycling!
     
     # everything is a function
+    x <- 1:5
     `>`(x,2)
     x>2
     
