@@ -17,7 +17,8 @@
     df2 <- data.frame(
         col1 = 1:10,
         col2 = round(runif(10, 25, 75), 2),
-        col3 = sample(letters[23:26], 10, replace=T)
+        col3 = sample(letters[23:26], 10, replace=T),
+        stringsAsFactors = T
     )
     df2
 

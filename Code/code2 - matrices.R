@@ -1,8 +1,8 @@
 # create a matrix
-    mat <- matrix(1:50, nrow=10, ncol=5)
+    mat <- matrix(1:50, nrow=10, ncol=5, byrow=F)
     mat
     
-    mat2 <- matrix(1:50, nrow=10, ncol=5, byrow=TRUE)
+    mat2 <- matrix(1:50, nrow=10, ncol=5, byrow=T)
     mat2    
 
 # matrix is a vector with attributes
@@ -71,10 +71,10 @@
     mat[1:3, 1:2]
     mat[4:5,4] <- 1000; mat
     
-    sub <- matrix(c(1,1,4,6, 4, 7), 3, 2, T); sub
+    sub <- matrix(c(1,1,4,6, 4, 7), nrow=3, ncol=2, byrow=T); sub
     mat[sub]
     
-    mat[mat%%2==0]
+    
 
 
 
