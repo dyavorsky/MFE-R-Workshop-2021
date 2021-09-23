@@ -52,7 +52,7 @@ output: html_document
 
 - `hist()` makes histograms
 - `plot()` makes scatterplots
-- `boxplot()` makes barplots
+- `boxplot()` makes boxplots
 - You can make customized and elegant graphics with R, but it may take quite a few lines of code
 
 
@@ -60,19 +60,19 @@ output: html_document
 
 - Start with `ggplot(df)`
 - Then add your "geoms" with plus signs, such as `ggplot(df) + geom_point()`
-- You can put the values ("aesthetics") in the global spot `ggplot(aes=...)` or the local spot `geom_point(aes=...)`
+- You can put the values ("aesthetics") in the global spot `ggplot(aes(...))` or the local spot `ggplot() + geom_point(aes(...))`
 
 
 ## 8. Tidyverse
 
-- The package `dplyr` introduced the pipe operator (`%>%`), now R has a native pipe (`|>`)
-- Tidyvser works with "tibbles" that are just dataframe with special properties
+- The package `dplyr` introduced the pipe operator (`%>%`), R now has a native pipe (`|>`)
+- Tidyverse works with "tibbles" that are just dataframes with special properties
 - 5 key verbs:
     - `filter()` selects rows
     - `arrange()` orders by row
     - `select()` chooses columns
     - `mutate()` creates new columns
-    - `summarize()` with group_by() does aggregations
+    - `summarize()` with `group_by()` does aggregations
 - Tidyverse code reads like a sentence rather than a set of nested functions
 - Some nice-to-haves like `n()` that give the number of rows
 
@@ -91,6 +91,6 @@ output: html_document
 - You create an RMarkdown document using the simple markdown syntax and R code chunks
 - The package `knitr` "knits" your document, which means it runs the R code, collects the code's results, and create a "base" markdown document with all 3 things (your markdown syntax, your code, and your code's results).
 - `pandoc` (a Haskell library, not an R package) then converts `knitr`'s output (the base markdown document) to a file format of your choosing --  usually html or pdf
-- This is a fantastic way to do your assigments!
+- This is a fantastic way to do homework assigments!
 
 
