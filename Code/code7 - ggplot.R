@@ -19,7 +19,7 @@ ggplot(mtcars) + geom_histogram(aes(wt))
 
 
 
-## PRACTICE QUESTIONS
+## PRACTICE QUESTION
 
     # 1. # Use the 'diamonds' dataset in the 'ggplot2' to make the following plot:
         # x is 'log(carat)'

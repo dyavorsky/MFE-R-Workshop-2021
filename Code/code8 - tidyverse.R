@@ -14,9 +14,15 @@ mtcars
 mtcars[ , "wt"]
 
 # the "pipe"
+sapply(mtcars, mean)
 mtcars %>% sapply(mean)
 
 # the 5 verbs and group_by
+    
+    data(mtcars)
+    mtcars$carname <- rownames(mtcars)
+    mtcars <- as_tibble(mtcars)
+
     #1. filter() selects rows
     filter(mtcars, wt<3)
     mtcars %>% filter(wt<3)
@@ -29,7 +35,7 @@ mtcars %>% sapply(mean)
     mtcars %>% select(-(mpg:disp))
 
     #4. mutate() creates new columns
-    mtcars %>% mutate(carname = rownames(mtcars))
+    mtcars %>% mutate(ismerc = grepl("Merc", carname))
 
     #5. summarize() with group_by() does aggregations
     mtcars %>% group_by(cyl) %>% summarise(avgwt=mean(wt), carcount=n())
@@ -37,8 +43,7 @@ mtcars %>% sapply(mean)
     #put these together
     newtibble <- 
         mtcars %>% 
-            mutate(carname = rownames(mtcars),
-                   ismerc = grepl("Merc", carname)) %>% 
+            mutate(ismerc = grepl("Merc", carname)) %>% 
             group_by(cyl, ismerc) %>% 
             summarize(avgwt = mean(wt), ncars=n()) %>% 
             arrange(desc(ncars))
