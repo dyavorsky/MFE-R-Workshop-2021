@@ -201,7 +201,7 @@
     # Write a function that takes in a dataframe and calculates the correlation 
     # between the first column and every other column using a loop.
     set.seed(234)
-    example_df <- mapply(function (x) sample(1:100, 10, T), 1:5)
+    example_df <- mapply(function (x) sample(1:(x*100), 10, T), 1:5)
     example_df <- as.data.frame(example_df)
     
         corr_with_col1 <- function(df) {
@@ -224,7 +224,7 @@
         x3 = 21:30
     )
     
-        sapply(testlist, function(x) sum(x^2, - 10))
+        sapply(testlist, function(qq) sum(qq^2, - 10))
 
 
 

@@ -1,6 +1,12 @@
 # FUNCTIONS
 
-
+# example 0
+    plus_two <- function(q) {
+        q+2
+    }
+    plus_two(4)
+    plus_two("hi")
+    
 # example 1
     two_x_three_y <- function(x, y=5) {
         #defensive programming
@@ -43,12 +49,13 @@
     
     x <- 10
     y <- 10
-    x_plus_y() #2, not 20!
+    x_plus_y()    # 2, not 20!
+    x_plus_y(x,y) # 20!
 
 # example 3
     rm(list=ls())
     
-    # using global variables inside of functions is bad practice!
+    # using global variables inside of functions is **bad** practice!
     e3 <- function() x + 10
     
     # this is because changing the global value changes the function's result
@@ -137,10 +144,10 @@
         return(fixed_vec)
     }
     
-    # Write a function that takes in a dataframe and calculates the correlation 
-    # between the first column and every other column using a loop.
+    # Write a function that takes in this dataframe (example_df) and calculates the  
+    # correlation between the first column and every other column using a loop.
     set.seed(234)
-    example_df <- mapply(function (x) sample(1:100, 10, T), 1:5)
+    example_df <- mapply(function (x) sample(1:(x*10), 10, T), 1:5)
     
     corr_with_col1 <- function(...) {
         ...
