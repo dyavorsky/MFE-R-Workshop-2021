@@ -25,4 +25,4 @@ ggplot(mtcars) + geom_histogram(aes(wt))
         # x is 'log(carat)'
         # y is 'log(price)'
         # color the points with a different color for each level of 'clarity'
-        # add a title
+        # add a title (you'll probably have to google how to do this)
