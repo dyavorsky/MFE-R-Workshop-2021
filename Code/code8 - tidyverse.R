@@ -13,9 +13,12 @@ str(mtcars)
 mtcars
 mtcars[ , "wt"]
 
-# the "pipe"
+# the "pipe" (cmd + shift + m)
 sapply(mtcars, mean)
 mtcars %>% sapply(mean)
+
+# R now has a "native" pipe |> 
+mtcars |> sapply(mean)
 
 # the 5 verbs and group_by
     
